@@ -1,49 +1,20 @@
-import { invoke } from '@tauri-apps/api/core'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Route, Routes } from 'react-router-dom'
+
+import AboutPage from '@/pages/about'
+import BlogPage from '@/pages/blog'
+import DocsPage from '@/pages/docs'
+import IndexPage from '@/pages/index'
+import PricingPage from '@/pages/pricing'
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState('')
-  const [name, setName] = useState('')
-
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke('greet', { name }))
-  }
-
   return (
-    <main className="container">
-      <h1>Welcome to Tauri + React</h1>
-
-      <div className="row">
-        <a href="https://vite.dev" rel="noreferrer" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" rel="noreferrer" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://react.dev" rel="noreferrer" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault()
-          greet()
-        }}
-      >
-        <input
-          id="greet-input"
-          onChange={e => setName(e.currentTarget.value)}
-          placeholder="Enter a name..."
-        />
-        <button type="submit">Greet</button>
-      </form>
-      <p>{greetMsg}</p>
-    </main>
+    <Routes>
+      <Route element={<IndexPage />} path="/" />
+      <Route element={<DocsPage />} path="/docs" />
+      <Route element={<PricingPage />} path="/pricing" />
+      <Route element={<BlogPage />} path="/blog" />
+      <Route element={<AboutPage />} path="/about" />
+    </Routes>
   )
 }
 

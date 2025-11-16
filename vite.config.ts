@@ -1,7 +1,11 @@
+import type { PluginOption } from 'vite'
+import path from 'node:path'
 import process from 'node:process'
+import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-import AutoImport from 'unplugin-auto-import/vite'
+import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 const host = process.env.TAURI_DEV_HOST
 
@@ -9,15 +13,29 @@ const host = process.env.TAURI_DEV_HOST
 export default defineConfig(async () => ({
   plugins: [
     react(),
-    AutoImport({
+    autoImport({
       dts: 'src/types/auto-imports.d.ts',
       imports: [
         'react',
         'react-router-dom',
       ],
+      dirs: [
+        'src/components',
+        'src/layouts',
+        'src/utils',
+        'src/hooks',
+        'src/store',
+        'src/apis',
+      ],
     }),
+    tsconfigPaths(),
+    tailwindcss() as unknown as PluginOption,
   ],
-
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   //
   // 1. prevent Vite from obscuring rust errors

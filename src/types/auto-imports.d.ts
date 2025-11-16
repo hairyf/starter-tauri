@@ -6,17 +6,30 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const DiscordIcon: typeof import('../components/icons').DiscordIcon
+  const GithubIcon: typeof import('../components/icons').GithubIcon
+  const HeartFilledIcon: typeof import('../components/icons').HeartFilledIcon
   const Link: typeof import('react-router-dom').Link
+  const Logo: typeof import('../components/icons').Logo
+  const MoonFilledIcon: typeof import('../components/icons').MoonFilledIcon
   const NavLink: typeof import('react-router-dom').NavLink
+  const Navbar: typeof import('../components/navbar').Navbar
   const Navigate: typeof import('react-router-dom').Navigate
   const Outlet: typeof import('react-router-dom').Outlet
   const Route: typeof import('react-router-dom').Route
   const Routes: typeof import('react-router-dom').Routes
+  const SearchIcon: typeof import('../components/icons').SearchIcon
+  const SunFilledIcon: typeof import('../components/icons').SunFilledIcon
+  const ThemeSwitch: typeof import('../components/theme-switch').ThemeSwitch
+  const TwitterIcon: typeof import('../components/icons').TwitterIcon
   const createRef: typeof import('react').createRef
+  const default: typeof import('../layouts/default').default
   const forwardRef: typeof import('react').forwardRef
   const lazy: typeof import('react').lazy
   const memo: typeof import('react').memo
   const startTransition: typeof import('react').startTransition
+  const subtitle: typeof import('../components/primitives').subtitle
+  const title: typeof import('../components/primitives').title
   const useCallback: typeof import('react').useCallback
   const useContext: typeof import('react').useContext
   const useDebugValue: typeof import('react').useDebugValue
@@ -44,4 +57,13 @@ declare global {
   const useState: typeof import('react').useState
   const useSyncExternalStore: typeof import('react').useSyncExternalStore
   const useTransition: typeof import('react').useTransition
+}
+// for type re-export
+declare global {
+  // @ts-ignore
+  export type { IconSvgProps } from '../components/icons'
+  import('../components/icons')
+  // @ts-ignore
+  export type { ThemeSwitchProps } from '../components/theme-switch'
+  import('../components/theme-switch')
 }
