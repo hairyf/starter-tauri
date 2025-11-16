@@ -1,0 +1,17 @@
+{
+  "identifier": "mobile-capability",
+  "platforms": [
+    "android",
+    "iOS"
+  ],
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "biometric:default",
+    "barcode-scanner:default",
+    "notification:default",
+    "store:default",
+    "sql:default"
+  ]
+}
