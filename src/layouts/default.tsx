@@ -1,12 +1,12 @@
 import { Link } from '@heroui/react'
 
-export default function DefaultLayout({
+export function DefaultLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <div className="relative flex flex-col h-screen">
+    <div className="relative flex flex-col min-h-screen py-6 pt-[var(--safe-area-inset-padding-top)] pb-[var(--safe-area-inset-padding-bottom)] max-w-lg mx-auto">
       <Navbar />
       <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16">
         {children}

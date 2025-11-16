@@ -1,3 +1,11 @@
 @import 'tailwindcss';
 
 @config "../tailwind.config.js";
+
+:root {
+  --safe-area-inset-top: env(safe-area-inset-top);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+
+  --safe-area-inset-padding-top: max(var(--safe-area-inset-top), 20px);
+  --safe-area-inset-padding-bottom: max(var(--safe-area-inset-bottom), 20px);
+}
