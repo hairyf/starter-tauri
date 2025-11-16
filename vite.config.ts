@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
+import Pages from 'vite-plugin-pages'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 const host = process.env.TAURI_DEV_HOST
@@ -20,14 +21,16 @@ export default defineConfig(async () => ({
         'react-router-dom',
       ],
       dirs: [
+        'src/config',
         'src/components',
-        'src/layouts',
+        'src/layouts/index.ts',
         'src/utils',
         'src/hooks',
         'src/store',
         'src/apis',
       ],
     }),
+    Pages(),
     tsconfigPaths(),
     tailwindcss() as unknown as PluginOption,
   ],

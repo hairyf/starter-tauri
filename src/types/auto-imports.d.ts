@@ -25,8 +25,10 @@ declare global {
   const createRef: typeof import('react').createRef
   const default: typeof import('../layouts/default').default
   const forwardRef: typeof import('react').forwardRef
+  const layouts: typeof import('../layouts/index').layouts
   const lazy: typeof import('react').lazy
   const memo: typeof import('react').memo
+  const siteConfig: typeof import('../config/site').siteConfig
   const startTransition: typeof import('react').startTransition
   const subtitle: typeof import('../components/primitives').subtitle
   const title: typeof import('../components/primitives').title
@@ -60,6 +62,9 @@ declare global {
 }
 // for type re-export
 declare global {
+  // @ts-ignore
+  export type { SiteConfig } from '../config/site'
+  import('../config/site')
   // @ts-ignore
   export type { IconSvgProps } from '../components/icons'
   import('../components/icons')

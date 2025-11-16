@@ -14,17 +14,6 @@ import {
 } from '@heroui/react'
 import clsx from 'clsx'
 
-import {
-  DiscordIcon,
-  GithubIcon,
-  HeartFilledIcon,
-  Logo,
-  SearchIcon,
-  TwitterIcon,
-} from '@/components/icons'
-import { ThemeSwitch } from '@/components/theme-switch'
-import { siteConfig } from '@/config/site'
-
 export function Navbar() {
   const searchInput = (
     <Input

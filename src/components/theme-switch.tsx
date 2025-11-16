@@ -5,7 +5,6 @@ import { useSwitch } from '@heroui/react'
 import { useTheme } from '@heroui/use-theme'
 import { VisuallyHidden } from '@react-aria/visually-hidden'
 import clsx from 'clsx'
-import { MoonFilledIcon, SunFilledIcon } from '@/components/icons'
 
 export interface ThemeSwitchProps {
   className?: string
