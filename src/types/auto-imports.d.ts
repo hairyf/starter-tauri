@@ -30,6 +30,7 @@ declare global {
   const memo: typeof import('react').memo
   const siteConfig: typeof import('../config/site').siteConfig
   const startTransition: typeof import('react').startTransition
+  const store: typeof import('../store/index').store
   const subtitle: typeof import('../components/primitives').subtitle
   const title: typeof import('../components/primitives').title
   const useCallback: typeof import('react').useCallback
