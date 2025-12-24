@@ -29,7 +29,3 @@ tauri-plugin-store = "2"
 features = ["sqlite"] # or "postgres", or "mysql"
 version = "2"
 
-[target.'cfg(any(target_os = "android", target_os = "ios"))'.dependencies]
-tauri-plugin-barcode-scanner = "2"
-tauri-plugin-biometric = "2"
-
