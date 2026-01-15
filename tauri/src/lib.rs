@@ -1,3 +1,7 @@
+mod database;
+
+use database::migration::db_migrate;
+
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 #[tauri::command]
 fn greet(name: &str) -> String {
@@ -6,8 +10,11 @@ fn greet(name: &str) -> String {
 
 pub fn run() {
     tauri::Builder::default()
+        .setup(|app| {
+            db_migrate(app)?;
+            Ok(())
+        })
         // Sql store plugin
-        .plugin(tauri_plugin_sql::Builder::new().build())
         // Simple Store plugin
         .plugin(tauri_plugin_store::Builder::new().build())
         // Notification plugin

@@ -28,4 +28,3 @@ tauri-plugin-store = "2"
 [dependencies.tauri-plugin-sql]
 features = ["sqlite"] # or "postgres", or "mysql"
 version = "2"
-

@@ -30,6 +30,9 @@
       "static/128x128@2x.png",
       "static/icon.icns",
       "static/icon.ico"
+    ],
+    "resources": [
+      "prisma/migrations/"
     ]
   }
 }
