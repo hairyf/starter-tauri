@@ -1,4 +1,4 @@
-import { button as buttonStyles, Code, Link, Snippet } from '@heroui/react'
+import { Button, Chip } from '@heroui/react'
 
 function Page() {
   return (
@@ -17,35 +17,27 @@ function Page() {
         </div>
 
         <div className="flex gap-3">
-          <Link
-            isExternal
-            className={buttonStyles({
-              color: 'primary',
-              radius: 'full',
-              variant: 'shadow',
-            })}
-            href={siteConfig.links.docs}
-          >
-            Documentation
+          <Link to={siteConfig.links.docs}>
+            <Button>
+              Documentation
+            </Button>
           </Link>
-          <Link
-            isExternal
-            className={buttonStyles({ variant: 'bordered', radius: 'full' })}
-            href={siteConfig.links.github}
-          >
-            <GithubIcon size={20} />
-            GitHub
+
+          <Link to={siteConfig.links.github}>
+            <Button variant="outline">
+              <GithubIcon size={20} />
+              GitHub
+            </Button>
           </Link>
         </div>
 
         <div className="mt-8">
-          <Snippet hideCopyButton hideSymbol variant="bordered">
-            <span>
-              Get started by editing
-              {' '}
-              <Code color="primary">pages/index.tsx</Code>
-            </span>
-          </Snippet>
+          <div className="inline-flex items-center gap-2 rounded-lg border border-default-200 bg-default-50 px-4 py-2 text-sm text-default-700">
+            <span>Get started by editing</span>
+            <Chip>
+              pages/index.tsx
+            </Chip>
+          </div>
         </div>
       </section>
     </layouts.default>

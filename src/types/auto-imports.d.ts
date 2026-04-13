@@ -23,7 +23,6 @@ declare global {
   const ThemeSwitch: typeof import('../components/theme-switch').ThemeSwitch
   const TwitterIcon: typeof import('../components/icons').TwitterIcon
   const createRef: typeof import('react').createRef
-  const default: typeof import('../layouts/default').default
   const forwardRef: typeof import('react').forwardRef
   const layouts: typeof import('../layouts/index').layouts
   const lazy: typeof import('react').lazy
